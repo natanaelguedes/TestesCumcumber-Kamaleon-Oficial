@@ -31,10 +31,10 @@ I want the user to provide the correct username and password to be able to be lo
     Then now  a user is logged in the system
     
       
-      | variables  | value | 
-      | Login      |     5 | 
-      | Senha      |     7 | 
-   @Status 
+      | variables  | value   | 
+      | Login      |natanael | 
+      | Senha      |246810   | 
+   @Status        success
   @LoginInvalid
     Scenario: How user want loggin in the system with user invalid 
     Given How user must access a url http://www.homologacao.com.br/homologacao
