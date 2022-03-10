@@ -100,3 +100,4 @@ Purchases->Orders->Register and the system will show a registration form.
       |Produtos Adicionados |o sistema exibe abaixo a Quantidade, o custo bruto e o custo liquido.
       |Dados para Faturamento| O faturamento foi 1000|
       |Dados de Entrega (dados, observação)| Teste, Testes 
+      |Botao confirmar|clique
