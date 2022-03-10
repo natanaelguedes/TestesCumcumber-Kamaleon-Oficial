@@ -25,7 +25,6 @@ Purchases->Orders->Register and the system will show a registration form.
   @RegisterOrderWithSuccess
   Scenario: How user want loggin in the system with success and registrar a new order in
   system 
-  
     Given I as the user want to access a url http://www.kamaleon.com.br/homologacao
     When a page open
     Then a user must provides a Login == 'natanael' and Password =='246810' 
@@ -55,89 +54,49 @@ Purchases->Orders->Register and the system will show a registration form.
     Código and Nome. The system display a button Filtrar.
     Then the user provides a Ref.Fornecedor,o Código, and the a name
     And the user clicks Filter button 
-    Then in products, the system displays a list with a codigo, Referência, Grade, Und. de Compra filled and with the cost, clean cost,purcharse, sales, quantidad , Tx.Desc(%) and a icon
+    Then in products, the system displays a list with a codigo, Referência, Grade, Und. de Compra filled and with the cost, clean cost,purcharse, 
+    sales,    quantidad , Tx.Desc(%) and a icon
     checkboxs and more two icons, a printer  and  magnifying glass.
     Then and user provides: a cost, clean cost,the buy,for sales, the quantidad and the Tx.Desc and mark a or more checkboxs  
-    And click the add button    
-      
-      | variables  | value   | 
-      | Login      |natanael | 
-      | Senha      |246810   | 
-   @Status        success
-  @LoginInvalid
-    Scenario: How user want loggin in the system with user invalid 
-    Given How user must access a url http://www.homologacao.com.br/homologacao
-    And the user must provide a Login=='gabriel' and Password=='246810'
-    Then the system return a messenger " Aviso! Login não pode ser efetuado. Verifique seu login e senha."
+    and more two icons, a printer  and  magnifying glass.
+    And click the add button add
+    Then the system, a display in added products is display a list with Código,Referência,Grade, Und.de Compra, Custo, Custo Limpo,
+     Compra,Venda,Qtde,Tx Desc and display a checkbox next to.
+    Then the system display six text fields: a cust,clean cust, purchaces, quantidad and tx.Desc   
+    Then more below, a display in product add, a  Código,Referência,Grade, Und.de Compra, Custo, Custo Limpo, Compra,Venda,Qtde,Tx Desc and 
+    display a checkbox next to.
+    And  below, in product add, is display the amount, the reference,the grid,purchase unit,cust, clean cust,purchases,sales and the amount.
+    And below, a system display the amount, the cust gross and net
+    Then more below, a system display a one text fields, the billing data and other for Note.    
+    And the system display two buttons, a for list and other for confirm.
+    Then the system display a message "Sucesso!","Os dados  foram salvos corretamente!" 
+    And two buttons list and include. 
     
-
-     
-      | variable  | value   |
-      | Login     | gabriel |
-      | Senha     |  246810 |
-  @status     false
- 
- 
- @PasswordInvalid
-    Scenario: How user want loggin in the system with user invalid 
-    Given How user must access a url http://www.homologacao.com.br/homologacao
-    And the user must provide a Login=='gabriel' and Password=='246810'
-    Then the system return a messenger " Aviso! Login não pode ser efetuado. Verifique seu login e senha."
-    
-
-     
-      | name  | value | status  |
-      | name1 |     5 | success |
-      | name2 |     7 | Fail    |
- 
- 
- 
-  
- @LoginValid-And-PasswordInvalid
-    Scenario: How user want loggin in the system with user invalid and password valid 
-    Given How user must access a url http://www.homologacao.com.br/homologacao
-    And the user must provide a Login=='natanael' and Password=='247412'
-    Then the system return a messenger " Aviso! Login não pode ser efetuado. Verifique seu login e senha."
-    
-
-     
-      | name  | value | status  |
-      | name1 |     5 | success |
-      | name2 |     7 | Fail    |
+    @CASETEST-FORNECEDOR 
       
-      
-      
-      
-      
-      
- 
-  
- @LoginInvalid-And-PassworValid
-    Scenario: How user want loggin in the system with user invalid and password valid 
-    Given How user must access a url http://www.homologacao.com.br/homologacao
-    And the user must provide a Login=='eduardo' and Password=='246810'
-    Then the system return a messenger " Aviso! Login não pode ser efetuado. Verifique seu login e senha."
-    
-
-     
-      | name  | value | status  |
-      | name1 |     5 | success |
-      | name2 |     7 | Fail    |
-      
-      
-      
-      
-      
- 
-  
- @Login-And-PassworInValid
-    Scenario: How user want loggin in the system with user invalid and password valid 
-    Given How user must access a url http://www.homologacao.com.br/homologacao
-    And the user must provide a Login=='Rafael' and Password=='246811'
-    Then the system return a messenger " Aviso! Login não pode ser efetuado. Verifique seu login e senha."
-    
-
-     
-      | name  | value | status  |
-      | name1 |     5 | success |
-      | name2 |     7 | Fail    |
+      | variables         | value       | 
+      | Login             |natanael     | 
+      | Senha             |246810       | 
+      |Fornecedor         |click na lupa|
+      |Nome/NomeFantasia  |Teste        |
+      |Tipo               |PessoaFisica |
+      |CPF                |079664875-80 |
+      |CNPJ               |08.471.438/0001-60|
+      |MARCA              |SELECIONA UMA OPÇÃO|
+      |STATUS             |SELECIONA A OPÇÃO BLOQUEADO|
+      |CLICK NO BOTÃO FILTRAR|
+      |Lojas Participantes|Seleciona uma unidade de negócio|
+      |SISTEMA EXIBE CODIGO,SIGLA E LOJA E UM OU MAIS CHECKBOXS|
+      |CLICK EM UM OU MAIS CHECKBOXS| 
+      |RESPONSÁVEL        |NOME DO USUARIO LOGADO , PREENCHIDO PELO SISTEMA|
+      |FRETE              |O USUÁRIO ESCOLHE UMA OPÇÃO PARA O FRETE|
+      |IPI INCLUSO        |O USUÁRIO ESCOLHE UMA OPÇÃO PARA O IPI INCLUSO|
+      |REMARCA PRODUTOS   |O USUÁRIO ESCOLHE UMA OPÇÃO PARA REMARCA PRODUTO|  
+      |PAGAMENTO          |O USUÁRIO CLICA NO SELECT E ESCOLHE A  COND.PAGAMENTO|
+      |PAGAMENTO          |O USUÁRIO INSERE NO CAMPO DATA INICIO E DATA DE FIM|
+      |ADICIONAR PRODUTO AO PEDIDO|O USUÁRIO  ESCOLHE NO SELECT PARA GRUPO,SUBFAMILIA,MATERIAL,POSSE,Familia,Seção,Marca,coleção e posse 
+      |BOTÃO FILTRAR      | O SISTEMA EXIBE A LISTA DE PRODUTOS COM O CÓDIGO, REFERÊNCIA,GRADE,UND. DE COMPRA E CAMPO TEXTO PARA CUSTO,CUSTO LIMPO,COMPRA,VENDA,Qtde E Tx,Desc e o sistema exibe o checkbox e dois ícones (impressora e lupa)
+      |Produtos Adicionados| O Sistema exibe o Código,Referência,Grade,Und de Compra,Custo,Custo Limpo ,Compra, Venda, Qtde (icone caneta para editar e x para excluir) 
+      |Produtos Adicionados |o sistema exibe abaixo a Quantidade, o custo bruto e o custo liquido.
+      |Dados para Faturamento| O faturamento foi 1000|
+      |Dados de Entrega (dados, observação)| Teste, Testes 
